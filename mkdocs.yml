@@ -6,7 +6,8 @@ nav:
   - Home: index.md
   - Getting Started: api/getting-started/index.md
   - Documentation: api/documentation/index.md
-    
+plugins:
+  - search
 markdown_extensions:
   - tables
   - admonition
