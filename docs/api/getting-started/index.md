@@ -64,7 +64,6 @@ gunshotFX.Sound.Ended:Connect(function()
 	end)
     gunshotFX:Unload()
 end)
-
 ```
 ```luau title="OUTPUT:"
 "Successfully unloaded" - LocalScript

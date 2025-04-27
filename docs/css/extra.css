@@ -1,10 +1,15 @@
+:root  > * {
+  --md-typeset-a-color:                    #b5acfc !important;
+  --md-primary-fg-color:                   #625182 !important;
+  --md-primary-fg-color--dark:             #625182 !important;
+  --md-accent-fg-color:                    #625182 !important;
+}
 .md-header__title {
 	margin-left: 0 !important;
 }
-
-
-:root  > * {
-  --md-primary-fg-color:        #625182;
-  --md-primary-fg-color--dark:  #625182;
-  --md-accent-fg-color:         #625182;
+.md-footer-meta {
+	display:none !important;
+}
+.md-footer__inner {
+	padding: 0 0 0 0 !important;
 }
