@@ -20,8 +20,8 @@ Loads a sound into the EasySFX module, enabling sound effect management.
 
         ```luau
         local EasySFX = require(game.ReplicatedStorage.EasySFX)
-        local sound = workspace.MySound
-        local gunshotFX = EasySFX:Load(sound)
+        local soundObj = workspace.MySound
+        local sound = EasySFX:Load(soundObj)
         ```
 
 ---
@@ -35,8 +35,8 @@ Unloads the sound from the module and destroys the sound object.
     * Example:
 
         ```luau
-		local gunshotFX = EasySFX:Load(sound)
-        gunshotFX:Destroy()
+		local sound = EasySFX:Load(soundObj)
+        sound:Destroy()
         ```
 
 ---
@@ -50,8 +50,8 @@ Unloads the sound from the module and removes all applied sound effects.
     * Example:
 
         ```luau
-		local gunshotFX = EasySFX:Load(sound)
-        gunshotFX:Unload()
+		local sound = EasySFX:Load(soundObj)
+        sound:Unload()
         ```
 
 ---
@@ -67,8 +67,8 @@ Registers a function to be executed when the sound is unloaded from the module.
     * Example:
 
         ```luau
-		local gunshotFX = EasySFX:Load(sound)
-        gunshotFX:OnUnload(function()
+		local sound = EasySFX:Load(soundObj)
+        sound:OnUnload(function()
             print("Sound unloaded!")
         end)
         ```
@@ -88,8 +88,8 @@ Removes a sound effect from the loaded sound.
     * Example:
 
         ```luau
-        local reverbEffect = gunshotFX:Reverb()
-        gunshotFX:RemoveEffect(reverbEffect)
+        local reverbEffect = sound:Reverb()
+        sound:RemoveEffect(reverbEffect)
         ```
 
 ---
@@ -103,7 +103,7 @@ Retrieves the sound effect instances currently applied to the loaded sound.
     * Example:
 
         ```luau
-        local effects = gunshotFX:GetEffects()
+        local effects = sound:GetEffects()
         for name, effect in pairs(effects) do
             print(name, effect)
         end
@@ -120,7 +120,7 @@ Retrieves the names of the sound effects currently applied to the loaded sound.
     * Example:
 
         ```luau
-        local effectNames = gunshotFX:GetEffectNames()
+        local effectNames = sound:GetEffectNames()
         for i, name in ipairs(effectNames) do
             print(i, name)
         end
@@ -139,7 +139,7 @@ Applies a reverb effect to the loaded sound or returns an existing reverb effect
     * Example:
 
         ```luau
-        local reverb = gunshotFX:Reverb({
+        local reverb = sound:Reverb({
             DryLevel = 0,
             WetLevel = -10
         })
@@ -158,7 +158,7 @@ Applies an echo effect to the loaded sound or returns an existing echo effect.
     * Example:
 
         ```luau
-        local echo = gunshotFX:Echo({
+        local echo = sound:Echo({
             Delay = 0.2,
             Decay = 0.5
         })
@@ -177,7 +177,7 @@ Applies an equalizer effect to the loaded sound or returns an existing equalizer
     * Example:
 
         ```luau
-        local equalizer = gunshotFX:Equalizer({
+        local equalizer = sound:Equalizer({
             LowGain = 0.8,
             HighGain = -0.5
         })
@@ -196,7 +196,7 @@ Applies a compressor effect to the loaded sound, or returns an existing one.
     * Example:
 
         ```luau
-        local compressor = gunshotFX:Compressor({
+        local compressor = sound:Compressor({
             Threshold = -20,
             Ratio = 4
         })
@@ -215,7 +215,7 @@ Applies a chorus effect to the loaded sound or returns an existing chorus effect
     * Example:
 
         ```luau
-        local chorus = gunshotFX:Chorus({
+        local chorus = sound:Chorus({
             Depth = 0.7,
             Rate = 5
         })
@@ -234,7 +234,7 @@ Applies a tremolo effect to the loaded sound or returns an existing tremolo effe
     * Example:
 
         ```luau
-        local tremolo = gunshotFX:Tremolo({
+        local tremolo = sound:Tremolo({
            Frequency = 10,
            Depth = 0.6
         })
@@ -253,7 +253,7 @@ Applies a distortion effect to the loaded sound or returns an existing distortio
     * Example:
 
         ```luau
-        local distortion = gunshotFX:Distortion({
+        local distortion = sound:Distortion({
             Gain = 0.9
         })
         ```
@@ -271,7 +271,7 @@ Applies a pitch shift effect to the loaded sound.
     * Example:
 
         ```luau
-        local pitchShift = gunshotFX:PitchShift({
+        local pitchShift = sound:PitchShift({
             Octave = 1,
             Pitch = 0.5
         })
@@ -290,7 +290,7 @@ Applies a flange effect to the loaded sound or returns an existing flange effect
     * Example:
 
         ```luau
-        local flange = gunshotFX:Flange({
+        local flange = sound:Flange({
             Depth = 0.4,
             Rate = 8
         })
