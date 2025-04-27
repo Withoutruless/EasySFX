@@ -1,0 +1,36 @@
+name: MkDocs Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main] # Or whatever branch contains your MkDocs source
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs mkdocs-material # Add any other MkDocs plugins you use
+
+      - name: Build MkDocs site
+        run: mkdocs build --config-file mkdocs.yml --site-dir public
+        env:
+          PYTHONPATH: . # Ensure local modules are found if any
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ # Output directory from MkDocs build
+          publish_branch: gh-pages
+          force_orphan: true # If gh-pages has existing content you want to overwrite
+          user_name: github-actions
+          user_email: github-actions@github.com
