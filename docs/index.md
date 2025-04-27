@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+---
+hide:
+- navigation
+- toc
+---
+#
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+   <h1 style="text-align:center;">EasySFX</h1>
+   <p style="text-align:center;">
+    EasySFX Is a <strong>sound effect management</strong> module built with <strong>simplicity</strong> in mind.
+   </p>
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+---
+<div style="text-align: center; margin-top: 20px;">
+    <a href="./api/getting-started" class="md-button md-button--primary">Get Started</a>
+    <a href="./api/documentation" class="md-button">Documentation</a>
+</div>
