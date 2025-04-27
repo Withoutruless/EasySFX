@@ -8,7 +8,7 @@ Easy to understand explanation of the module's functions and usage.
 
 ---
 
-### `api:Load(audio: Sound)`
+### `EasySFX:Load(audio: Sound)`
 
 Loads a sound into the EasySFX module, enabling sound effect management.
 
@@ -26,7 +26,7 @@ Loads a sound into the EasySFX module, enabling sound effect management.
 
 ---
 
-### `soundProps:Destroy()`
+### `sound:Destroy()`
 
 Unloads the sound from the module and destroys the sound object.
 
@@ -41,7 +41,7 @@ Unloads the sound from the module and destroys the sound object.
 
 ---
 
-### `soundProps:Unload()`
+### `sound:Unload()`
 
 Unloads the sound from the module and removes all applied sound effects.
 
@@ -56,7 +56,7 @@ Unloads the sound from the module and removes all applied sound effects.
 
 ---
 
-### `soundProps:OnUnload(Function: (any?))`
+### `sound:OnUnload(Function: (any?))`
 
 Registers a function to be executed when the sound is unloaded from the module.
 
@@ -77,7 +77,7 @@ Registers a function to be executed when the sound is unloaded from the module.
 
 ---
 
-### `soundProps:RemoveEffect(effect: Instance?)`
+### `sound:RemoveEffect(effect: Instance?)`
 
 Removes a sound effect from the loaded sound.
 
@@ -94,7 +94,7 @@ Removes a sound effect from the loaded sound.
 
 ---
 
-### `soundProps:GetEffects(): {[string]: Instance}`
+### `sound:GetEffects(): {[string]: Instance}`
 
 Retrieves the sound effect instances currently applied to the loaded sound.
 
@@ -111,7 +111,7 @@ Retrieves the sound effect instances currently applied to the loaded sound.
 
 ---
 
-### `soundProps:GetEffectNames(): {[number]: string}`
+### `sound:GetEffectNames(): {[number]: string}`
 
 Retrieves the names of the sound effects currently applied to the loaded sound.
 
@@ -128,7 +128,7 @@ Retrieves the names of the sound effects currently applied to the loaded sound.
 
 ---
 
-### `soundProps:Reverb(properties: reverbProperties)`
+### `sound:Reverb(properties: reverbProperties)`
 
 Applies a reverb effect to the loaded sound or returns an existing reverb effect.
 
@@ -147,7 +147,7 @@ Applies a reverb effect to the loaded sound or returns an existing reverb effect
 
 ---
 
-### `soundProps:Echo(properties: echoProperties)`
+### `sound:Echo(properties: echoProperties)`
 
 Applies an echo effect to the loaded sound or returns an existing echo effect.
 
@@ -166,7 +166,7 @@ Applies an echo effect to the loaded sound or returns an existing echo effect.
 
 ---
 
-###  `soundProps:Equalizer(properties: equalizerProperties)`
+###  `sound:Equalizer(properties: equalizerProperties)`
 
 Applies an equalizer effect to the loaded sound or returns an existing equalizer effect.
 
@@ -185,7 +185,7 @@ Applies an equalizer effect to the loaded sound or returns an existing equalizer
 
 ---
 
-### `soundProps:Compressor(properties: compressorProperties)`
+### `sound:Compressor(properties: compressorProperties)`
 
 Applies a compressor effect to the loaded sound, or returns an existing one.
 
@@ -204,7 +204,7 @@ Applies a compressor effect to the loaded sound, or returns an existing one.
 
 ---
 
-### `soundProps:Chorus(properties: chorusProperties)`
+### `sound:Chorus(properties: chorusProperties)`
 
 Applies a chorus effect to the loaded sound or returns an existing chorus effect.
 
@@ -223,7 +223,7 @@ Applies a chorus effect to the loaded sound or returns an existing chorus effect
 
 ---
 
-### `soundProps:Tremolo(properties: tremoloProperties)`
+### `sound:Tremolo(properties: tremoloProperties)`
 
 Applies a tremolo effect to the loaded sound or returns an existing tremolo effect.
 
@@ -242,7 +242,7 @@ Applies a tremolo effect to the loaded sound or returns an existing tremolo effe
 
 ---
 
-### `soundProps:Distortion(properties: distortionProperties)`
+### `sound:Distortion(properties: distortionProperties)`
 
 Applies a distortion effect to the loaded sound or returns an existing distortion effect.
 
@@ -260,7 +260,7 @@ Applies a distortion effect to the loaded sound or returns an existing distortio
 
 ---
 
-### `soundProps:PitchShift(properties: pitchshiftProperties)`
+### `sound:PitchShift(properties: pitchshiftProperties)`
 
 Applies a pitch shift effect to the loaded sound.
 
@@ -279,7 +279,7 @@ Applies a pitch shift effect to the loaded sound.
 
 ---
 
-### `soundProps:Flange(properties: flangeProperties)`
+### `sound:Flange(properties: flangeProperties)`
 
 Applies a flange effect to the loaded sound or returns an existing flange effect.
 
