@@ -26,6 +26,26 @@ Loads a sound into the EasySFX module, enabling sound effect management.
 
 ---
 
+### `soundProps:OnUnload(Function: (any?))`
+
+Registers a function to be executed when the sound is unloaded from the module.
+
+* `Function: (any?)`: The function to execute on unload.
+
+    * Returns: Nothing.
+
+    * Example:
+
+        ```luau
+        gunshotFX:OnUnload(function()
+            print("Sound unloaded!")
+        end)
+        ```
+!!! note "OnUnload() must be called **before** Unload()"
+	If you call OnUnload() **after** Unload() your function wont fire.
+
+---
+
 ### `soundProps:RemoveEffect(effect: Instance?)`
 
 Removes a sound effect from the loaded sound.
@@ -77,25 +97,6 @@ Retrieves the sound effect instances currently applied to the loaded sound.
 
 ---
 
-### `soundProps:OnUnload(Function: (any?))`
-
-Registers a function to be executed when the sound is unloaded from the module.
-
-* `Function: (any?)`: The function to execute on unload.
-
-    * Returns: Nothing.
-
-    * Example:
-
-        ```luau
-        gunshotFX:OnUnload(function()
-            print("Sound unloaded!")
-        end)
-        ```
-!!! note "OnUnload() must be called **before** Unload()"
-	If you call OnUnload() **after** Unload() your function wont fire.
-
----
 ### `soundProps:Unload()`
 
 Unloads the sound from the module and removes all applied sound effects.
