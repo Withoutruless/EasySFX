@@ -2,9 +2,27 @@
 hide:
 - navigation
 ---
+---
 ## EasySFX Documentation
 
 Easy to understand explanation of the module's functions and usage.
+
+---
+
+### `EasySFX:Logging(value: Boolean)`
+
+Enables logging for debugging purposes (Disabled by default).
+
+* `value: Boolean`: The value to set logging to.
+
+    * Returns: Nothing.
+
+    * Example:
+
+        ```luau
+        local EasySFX = require(game.ReplicatedStorage.EasySFX)
+		EasySFX.Logging(true)
+        ```
 
 ---
 
@@ -22,6 +40,19 @@ Loads a sound into the EasySFX module, enabling sound effect management.
         local EasySFX = require(game.ReplicatedStorage.EasySFX)
         local soundObj = workspace.MySound
         local sound = EasySFX:Load(soundObj)
+        ```
+
+---
+
+### `sound.Sound`
+
+* Reference back to SoundObj (Mostly for cleaner code, no real purpose.)
+
+    * Example:
+
+        ```luau
+		local sound = EasySFX:Load(soundObj)
+        sound.Sound -- Access to SoundObj
         ```
 
 ---
