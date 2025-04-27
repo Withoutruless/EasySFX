@@ -2,9 +2,9 @@
 hide:
 - navigation
 ---
-## EasySFX Module Documentation
+## EasySFX Documentation
 
-This document provides a comprehensive overview of the EasySFX module's functions and usage.
+Easy to understand explanation of the module's functions and usage.
 
 ---
 
