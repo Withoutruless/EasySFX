@@ -38,7 +38,7 @@ local sound_Reverb = sound:Reverb({
 sound_Echo.DryLevel = 0
 
 -- Remove an effect:
-sound.RemoveEffect(easySound_Echo) -- Remove the echo effect.
+sound.RemoveEffect(sound_Echo) -- Remove the echo effect.
 
 -- Unload the sound and remove all effects:
 sound.Unload() -- Unload the sound. Returns true on success, nil otherwise.
@@ -52,9 +52,9 @@ local soundObj = script.Sound
 local sound = EasySFX:Load(soundObj)
 
 -- Chaining multiple effects:
-local easySound_Reverb = sound:Reverb({ DryLevel = 0, WetLevel = -6 })
-local easySound_Distortion = sound:Distortion({ Gain = 0.8 })
-local easySound_Chorus = sound:Chorus({ Depth = 0.5, Rate = 10 })
+local sound_Reverb = sound:Reverb({ DryLevel = 0, WetLevel = -6 })
+local sound_Distortion = sound:Distortion({ Gain = 0.8 })
+local sound_Chorus = sound:Chorus({ Depth = 0.5, Rate = 10 })
 
 -- Using OnUnload to clean up:
 sound.Sound.Ended:Connect(function()
