@@ -14,5 +14,5 @@ hide:
 <div style="text-align: center; margin-top: 20px;">
     <a href="./api/getting-started" class="md-button md-button--primary">Get Started</a>
     <a href="./api/documentation" class="md-button">Documentation</a>
-	<a href="https://roblox.com" class="md-button">Get Module</a>
+	<a href="https://create.roblox.com/store/asset/121810074935113/EasySFX" class="md-button">Get Module</a>
 </div>
