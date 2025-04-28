@@ -6,14 +6,14 @@ hide:
 
 Installing EasySFX is very **easy**:
 
-1.  Grab the module from [here](https://roblox.com).
+1.  Grab the module from [here](https://create.roblox.com/store/asset/121810074935113).
 2.  Drop it into `ReplicatedStorage`.
 3.  Initiate it in your script like so:
 
 ```luau title="LocalScript"
 local EasySFX = require(game.ReplicatedStorage.EasySFX) -- Import the EasySFX module.
-local sound = script.Sound --  Reference your Sound object.
-local gunshotFX = EasySFX:Load(sound) -- Load a sound into EasySFX (Returns EasySFX object).
+local soundObj = script.Sound --  Reference your Sound object.
+local sound = EasySFX:Load(soundObj) -- Load a sound into EasySFX (Returns EasySFX object).
 ```
 
 ## Introduction
@@ -22,47 +22,47 @@ Once you've loaded a sound, you can apply effects to it. Here's how:
 
 ```luau title="LocalScript"
 local EasySFX = require(game.ReplicatedStorage.EasySFX)
-local sound = script.Sound
-local gunshotFX = EasySFX:Load(sound) -- (Loaded EasySFX object)
+local soundObj = script.Sound
+local sound = EasySFX:Load(soundObj) -- (Loaded EasySFX object)
 
--- Apply effects:
-local easySound_Echo = gunshotFX:Echo() -- Add echo.
+-- Apply effects (Returns effect instance):
+local sound_Echo = sound:Echo() -- Add echo.
 
--- Apply effects with properties:
-local easySound_Reverb = gunshotFX:Reverb({
+-- Apply effects with properties (applies before parenting):
+local sound_Reverb = sound:Reverb({
     DryLevel = 1,
     WetLevel = -2
 })
 
 -- Apply properties **after** initializing the effect:
-easySound_Echo.DryLevel = 0
+sound_Echo.DryLevel = 0
 
 -- Remove an effect:
-gunshotFX:RemoveEffect(easySound_Echo) -- Remove the echo effect.
+sound.RemoveEffect(easySound_Echo) -- Remove the echo effect.
 
 -- Unload the sound and remove all effects:
-gunshotFX:Unload() -- Unload the sound. Returns true on success, nil otherwise.
+sound.Unload() -- Unload the sound. Returns true on success, nil otherwise.
 ```
 
 ## Example
 
 ```luau title="LocalScript"
 local EasySFX = require(game.ReplicatedStorage.EasySFX)
-local sound = script.Sound
-local gunshotFX = EasySFX:Load(sound)
+local soundObj = script.Sound
+local sound = EasySFX:Load(soundObj)
 
 -- Chaining multiple effects:
-local easySound_Reverb = gunshotFX:Reverb({ DryLevel = 0, WetLevel = -6 })
-local easySound_Distortion = gunshotFX:Distortion({ Gain = 0.8 })
-local easySound_Chorus = gunshotFX:Chorus({ Depth = 0.5, Rate = 10 })
+local easySound_Reverb = sound:Reverb({ DryLevel = 0, WetLevel = -6 })
+local easySound_Distortion = sound:Distortion({ Gain = 0.8 })
+local easySound_Chorus = sound:Chorus({ Depth = 0.5, Rate = 10 })
 
 -- Using OnUnload to clean up:
-gunshotFX.Sound.Ended:Connect(function()
+sound.Sound.Ended:Connect(function()
     print("Sound ended, unloading effects")
-	gunshotFX:OnUnload(function() -- Call OnUnload() BEFORE Unloading for it to work.
+	sound.OnUnload(function() -- Call OnUnload() BEFORE Unloading for it to work.
 	    print("Successfully unloaded")
 	end)
-    gunshotFX:Unload()
+    sound.Unload()
 end)
 ```
 ```luau title="OUTPUT:"
