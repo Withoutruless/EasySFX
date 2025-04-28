@@ -22,7 +22,7 @@ theme:
   name: material
   logo: icon.png
   font:
-    text: Inter
+    text: Montserrat
     code: JetBrains Mono
   icon:
     edit: material/pencil

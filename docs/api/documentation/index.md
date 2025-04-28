@@ -9,7 +9,7 @@ Easy to understand explanation of the module's functions and usage.
 
 ---
 
-### `EasySFX:Logging(value: Boolean)`
+### `EasySFX.Logging(value: Boolean)`
 
 Enables logging for debugging purposes (Disabled by default).
 
@@ -57,7 +57,7 @@ Loads a sound into the EasySFX module, enabling sound effect management.
 
 ---
 
-### `sound:Destroy()`
+### `sound.Destroy()`
 
 Unloads the sound from the module and destroys the sound object.
 
@@ -67,12 +67,12 @@ Unloads the sound from the module and destroys the sound object.
 
         ```luau
 		local sound = EasySFX:Load(soundObj)
-        sound:Destroy()
+        sound.Destroy()
         ```
 
 ---
 
-### `sound:Unload()`
+### `sound.Unload()`
 
 Unloads the sound from the module and removes all applied sound effects.
 
@@ -82,12 +82,12 @@ Unloads the sound from the module and removes all applied sound effects.
 
         ```luau
 		local sound = EasySFX:Load(soundObj)
-        sound:Unload()
+        sound.Unload()
         ```
 
 ---
 
-### `sound:OnUnload(Function: (any?))`
+### `sound.OnUnload(Function: (any?))`
 
 Registers a function to be executed when the sound is unloaded from the module.
 
@@ -99,16 +99,22 @@ Registers a function to be executed when the sound is unloaded from the module.
 
         ```luau
 		local sound = EasySFX:Load(soundObj)
-        sound:OnUnload(function()
+        sound.OnUnload(function()
             print("Sound unloaded!")
         end)
+		sound.Unload()
         ```
-!!! note "OnUnload() must be called **before** Unload()"
-	If you call OnUnload() **after** Unload() your function wont fire.
+		```luau title="OUTPUT:"
+		"Sound unloaded!"
+		```
+!!! note ".Destroy() also executes functions fed to .OnUnload()"
+
+!!! warning ".OnUnload() **must** be called **before** .Unload()"
+	If you call .OnUnload() **after** .Unload() your function wont fire.
 
 ---
 
-### `sound:RemoveEffect(effect: Instance?)`
+### `sound.RemoveEffect(effect: Instance?)`
 
 Removes a sound effect from the loaded sound.
 
@@ -120,12 +126,12 @@ Removes a sound effect from the loaded sound.
 
         ```luau
         local reverbEffect = sound:Reverb()
-        sound:RemoveEffect(reverbEffect)
+        sound.RemoveEffect(reverbEffect)
         ```
 
 ---
 
-### `sound:GetEffects(): {[string]: Instance}`
+### `sound.GetEffects(): {[string]: Instance}`
 
 Retrieves the sound effect instances currently applied to the loaded sound.
 
@@ -134,7 +140,7 @@ Retrieves the sound effect instances currently applied to the loaded sound.
     * Example:
 
         ```luau
-        local effects = sound:GetEffects()
+        local effects = sound.GetEffects()
         for name, effect in pairs(effects) do
             print(name, effect)
         end
@@ -142,7 +148,7 @@ Retrieves the sound effect instances currently applied to the loaded sound.
 
 ---
 
-### `sound:GetEffectNames(): {[number]: string}`
+### `sound.GetEffectNames(): {[number]: string}`
 
 Retrieves the names of the sound effects currently applied to the loaded sound.
 
@@ -151,7 +157,7 @@ Retrieves the names of the sound effects currently applied to the loaded sound.
     * Example:
 
         ```luau
-        local effectNames = sound:GetEffectNames()
+        local effectNames = sound.GetEffectNames()
         for i, name in ipairs(effectNames) do
             print(i, name)
         end

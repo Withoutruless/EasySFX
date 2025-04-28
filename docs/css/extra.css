@@ -22,3 +22,16 @@
 	width:100px;
 	height:100px;
 }
+
+*, html, :after, :before {
+	transition: 0.1s !important;
+}
+h1 {
+	font-weight: 700 !important;
+}
+html {
+	font-weight: 500;
+}
+code {
+	font-weight: 500;
+}
